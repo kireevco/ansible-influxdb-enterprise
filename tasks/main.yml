@@ -64,7 +64,7 @@
   # TODO: Support for admin user authentication
   uri:
     body_format: 'json'
-    url: "{{ influx_meta_https_enabled | ternary('https', 'http') }}://0.0.0.0:{{ influx_meta_http_bind_port}}/show-cluster"
+    url: "{{ influx_meta_https_enabled | ternary('https', 'http') }}://{{ influx_meta_cluster_leader }}:{{ influx_meta_http_bind_port}}/show-cluster"
     user: "{{ influx_data_admin_username | default(omit) }}"
     password: "{{ influx_data_admin_password | default(omit) }}"
   delegate_to: "{{ influx_meta_cluster_leader }}"

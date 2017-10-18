@@ -4,7 +4,7 @@ hostname = "{{ ansible_hostname|mandatory }}"
   registration-enabled = {{ influx_meta_registration_enabled|lower|mandatory }}
   registration-server-url = "{{ influx_meta_registration_server_url|default("", true) }}"
   license-key = "{{ influx_enterprise_license_key|default("", true) }}"
-  license-path = "{{ influx_meta_license_path|default("", true) }}"
+  license-path = "{{ influx_enterprise_license_path }}"
 
 [meta]
   dir = "{{ influx_meta_dir|mandatory }}"

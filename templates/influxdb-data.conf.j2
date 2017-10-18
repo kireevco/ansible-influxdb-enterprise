@@ -16,7 +16,7 @@ bind-address = "{{ influx_data_bind_address }}:{{ influx_data_bind_port|mandator
   registration-enabled = {{ influx_data_registration_enabled|lower|mandatory }}
   registration-server-url = "{{ influx_data_registration_server_url|default("", true) }}"
   license-key = "{{ influx_enterprise_license_key|default("", true) }}"
-  license-path = "{{ influx_data_license_path|default("", true) }}"
+  license-path = "{{ influx_enterprise_license_path }}"
 
 # The meta section can be disregarded
 [meta]
