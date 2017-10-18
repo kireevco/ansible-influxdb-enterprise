@@ -3,7 +3,7 @@
 influx_node_types: ["meta", "data"]
 influx_node_type: "meta" # By default, install node as a meta-node
 influx_pkg_base_url: "https://dl.influxdata.com/enterprise/releases"
-influx_version: "1.3.2-c1.3.2" # The version of the package to install
+influx_version: "1.3.6-c1.3.6" # The version of the package to install
 influx_configuration_dir: "/etc/influxdb" # The base directory of the config
 influx_manage_config: true # Build and install config from templates
 influx_cluster_auto_join: true # Attempt to add members to the cluster automatically
@@ -16,7 +16,7 @@ influx_enterprise_license_key:
 # The contents of a provided license file.
 influx_enterprise_license: ""
 # Where the file will be installed on the remote host.
-influx_enterprise_license_path: ""
+influx_enterprise_license_path: "{{ influx_configuration_dir }}/{{ influx_license_filenames[influx_node_type] }}"
 
 # influxdb-meta.conf.j2 template options
 influx_meta_reporting_disabled: false
