@@ -96,12 +96,12 @@
     body_format: 'json'
     follow_redirects: 'all'
   with_items: "{{ influx_users }}"
+  no_log: true
   tags: ['influx', 'users', "{{ influx_node_type }}"]
   when:
     - influx_node_type == 'data'
     - influx_create_users
     - influx_users
-  register: result
 
 - name: "{{ influx_node_type }}: Running queries"
   uri:
